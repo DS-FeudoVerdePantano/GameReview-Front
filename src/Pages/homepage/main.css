@@ -1,0 +1,31 @@
+body{
+    background: linear-gradient(304.53deg, #2B0D5F -5.81%, rgba(43, 13, 95, 0) 87.38%);
+    margin: 0;
+}
+body main{
+    margin-left: 73px;
+}
+body main h2{
+    font-family: 'Montserrat';
+    font-size: 36px;
+}
+#BannerPrincipal{
+    margin-left: auto;
+}
+#BannerPrincipal a img{
+    width: 880px;
+    padding-top: 79px;
+    padding-bottom: 79px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+#HighLights ul{
+    list-style: none;
+}
+#HighLights ul li{
+    display: inline-block;
+}
+#HighLights ul li a img{
+    width: 300px;
+}
