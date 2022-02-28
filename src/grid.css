@@ -1,0 +1,49 @@
+/*Sistema de grid*/
+/*Grid 1440px*/
+.linha{
+    width: 1804px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 5px 0;
+}
+.coluna{
+    padding: 0 10px;
+    float: left;
+}
+.col1{
+    width: 740px;
+}
+.col2{
+    width: 630px;
+}
+.col3{
+    width: 720px;
+}
+.col4{
+    width: 810px;
+}
+.col5{
+    width: 900px;
+}
+.col6{
+    width: 880px;
+}
+.col7{
+    width: 970px;
+}
+.col8{
+    width: 1060px;
+}
+.col9{
+    width: 1150px;
+}
+.col10{
+    width: 1240px;
+}
+.col11{
+    width: 1330px;
+}
+.col12{
+    width: 120px;
+}
+

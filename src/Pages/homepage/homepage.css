@@ -1,0 +1,62 @@
+body{
+    background-color: #262626;
+    margin: 0;
+    color: #FFFFFF;
+    font-family: 'Montserrat','Courier New', Courier, monospace;
+}
+.degrade{
+    background: linear-gradient(304.53deg, #2B0D5F -5.81%, rgba(43, 13, 95, 0) 87.38%);
+}
+main{
+    overflow: auto;
+    padding: 10px 58px;
+    
+}
+.banner-principal{
+    width: 880px;
+    margin: 0 auto;
+}
+.inline{
+    display: flex;
+    flex-direction: row;
+    padding-left: 120px;
+    padding-right: 120px;
+    justify-content: space-around;
+}
+.banner-pequeno{
+    width: 300px;
+}
+ul.sem-marcador{
+    list-style: none;
+}
+img{
+    width: 100%;
+}
+/*Scroll bar*/
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #262626;
+    /*background-color: #2B0D5F;*/
+}
+  
+/* Track */
+::-webkit-scrollbar-track { 
+    border-radius: 1px;
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #797777;
+    /*background: #2B0D5F;*/
+    border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    
+    background: #a7a7a7;
+}
+/*::-webkit-scrollbar:hover{
+    
+    background: #797777;
+}*/
