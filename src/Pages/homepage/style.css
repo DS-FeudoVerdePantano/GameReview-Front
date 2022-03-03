@@ -32,31 +32,3 @@ ul.sem-marcador{
 img{
     width: 100%;
 }
-/*Scroll bar*/
-::-webkit-scrollbar {
-    width: 8px;
-    background-color: #262626;
-    /*background-color: #2B0D5F;*/
-}
-  
-/* Track */
-::-webkit-scrollbar-track { 
-    border-radius: 1px;
-}
-   
-  /* Handle */
-::-webkit-scrollbar-thumb {
-    background: #797777;
-    /*background: #2B0D5F;*/
-    border-radius: 1px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    
-    background: #a7a7a7;
-}
-/*::-webkit-scrollbar:hover{
-    
-    background: #797777;
-}*/
