@@ -1,0 +1,26 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.inputao{
+width: 394px;
+height: 72px;
+color: #fff;
+padding-left: 30px;
+font-size: 17.5px;
+
+background: #3C3A3A;
+border-radius: 18px;
+outline: none;
+}
+
+.inputao::placeholder{
+    color: #fff;
+}
+
+.inputao:focus::placeholder{
+    color: #3C3A3A;
+}
