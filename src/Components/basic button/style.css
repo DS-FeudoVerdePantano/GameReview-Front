@@ -7,8 +7,7 @@
 .botao{
     color: #ffffff;
     background-color: #410088;
-    width: 314px;
-    height: 55px;
+    min-height: 55px;
     font-size: 25px;
     cursor: pointer;
 }

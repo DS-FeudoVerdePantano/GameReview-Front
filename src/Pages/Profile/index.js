@@ -28,7 +28,7 @@ function ProfilePage() {
                   <BigInput className="InputEma" textudo="Alterar Email" />
                 </div>
                 <div className="Botao">
-                    <BasicButton type="submit" title="Salvar Alterações" />
+                    <BasicButton className="salvar" width="314px"  type="submit" title="Salvar Alterações" />
                 </div>
             </div>
         </div>
