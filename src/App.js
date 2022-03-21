@@ -1,24 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import './Normilaze.css'
+import Homepage from './Pages/homepage';
+import capa from './Images/Capa the witcher 3.png';
+import './Components/scrollbar/style.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Homepage banner={capa} />
   );
 }
 
