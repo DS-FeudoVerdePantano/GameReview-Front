@@ -2,6 +2,7 @@ import './style.css';
 import BasicButton from '../../Components/basic button';
 import logo from './../../Assets/Maicu Neimah 1.png';
 import BasicInput from '../../Components/basic input';
+
 function ProfilePage() {
   return (
     <div className="Profile">
