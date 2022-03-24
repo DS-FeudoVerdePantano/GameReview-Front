@@ -1,8 +1,7 @@
 import './style.css';
 import BasicButton from '../../Components/basic button';
-import logo from '../Profile/Maicu Neimah 1.png'
-import BigInput from '../../Components/big input/index';
-
+import logo from './../../Assets/Maicu Neimah 1.png';
+import BasicInput from '../../Components/basic input';
 function ProfilePage() {
   return (
     <div className="Profile">
@@ -22,10 +21,10 @@ function ProfilePage() {
             <div className="Entradas">
                 <div className="inputs">
                   <div className="InputUsu">
-                  <BigInput textudo="Alterar Usuário" />
+                  <BasicInput textudo="Alterar Usuário" />
                   </div>
 
-                  <BigInput className="InputEma" textudo="Alterar Email" />
+                  <BasicInput className="InputEma" textudo="Alterar Email" />
                 </div>
                 <div className="Botao">
                     <BasicButton className="salvar" width="314px"  type="submit" title="Salvar Alterações" />

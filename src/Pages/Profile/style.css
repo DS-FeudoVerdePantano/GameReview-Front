@@ -61,6 +61,13 @@ body {
 .InputUsu{
     margin-bottom: 37px;
 }
+
+/*Apartir daqui não sei o quanto isso é aceitavel em um código*/
+input.inputin{
+    width: 394px;
+    height: 72px;
+    font-size: 17.5px;
+}
 button.botao{
     width: 394px;
 }

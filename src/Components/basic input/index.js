@@ -1,6 +1,6 @@
 import './style.css';
 
-function MedInput({textudo}) {
+function BasicInput({textudo}) {
     return (
     <>
         <input className="inputin" type="text" placeholder={textudo} />
@@ -8,4 +8,4 @@ function MedInput({textudo}) {
     );
 }
 
-export default MedInput;
+export default BasicInput;
