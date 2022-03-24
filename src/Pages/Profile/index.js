@@ -14,7 +14,7 @@ function ProfilePage() {
             <div className="Foto">
               <ul className="caixote-esquerdo">
                   <li ><h3>Foto de Perfil</h3></li>
-                  <li className="Fotenha" ><a href="#"><img src={logo} width="272px" /></a></li>
+                  <li className="Fotenha" ><a href="#"><img src={logo} /></a></li>
                   <li ><a href="#"><h2>Alterar a Senha</h2></a></li>
               </ul>
             </div>
