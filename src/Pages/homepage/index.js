@@ -1,9 +1,10 @@
 import './style.css';
+import Navbar from '../../Components/NavBar';
 
 function Homepage({banner}) {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="guizaotop">
+      <Navbar />
       <div className="degrade">
       <div className="main">
         
@@ -35,7 +36,6 @@ function Homepage({banner}) {
         </main>
       </div>
     </div>
-      </header>
     </div>
   );
 }
