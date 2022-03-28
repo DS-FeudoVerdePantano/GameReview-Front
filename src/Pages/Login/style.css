@@ -55,7 +55,7 @@ form{
     font-style: normal;
 }
 
-input{
+.inputin{
     margin-bottom: 52px;
 }
 
@@ -73,4 +73,52 @@ button{
 .capiv{
     height: 90px;
     width: 110px;
+}
+
+.inputin{
+    border: 0;
+    padding: 0;
+    margin: 5;
+    box-sizing: border-box;
+
+    width: 314px;
+    height: 50px;
+    color: #fff;
+    padding-left: 30px;
+    font-size: 15px;
+
+    background: #3C3A3A;
+    border-radius: 18px;
+    outline: none;
+}
+
+.inputin::placeholder{
+    color: #fff;
+}
+
+.inputin:focus::placeholder{
+    color: #3C3A3A;
+}
+
+.login-button{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #410088;
+    min-height: 55px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.login-button:hover{
+    background-color: #2b0d5f;
+}
+.login-button:active{
+    background-color: #410088;
+}
+
+.inputError{
+    color: red;
+    margin-bottom: 15px;
 }

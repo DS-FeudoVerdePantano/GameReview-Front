@@ -1,16 +1,19 @@
-import './style.css';
+import { useNavigate } from 'react-router-dom'
 import brasao from './../../Images/brasaoleao.png';
 import menu from './../../Images/Sanduiche.svg';
 import perfil from './../../Images/Perfil.svg';
+import './style.css';
 
 function Navbar(){
+
+    let redirect = useNavigate()
+
     return(
         <>
             <div className="tudaokrl">
                 <div className="conteudo">
-                    <div class="left-box">
-                        <button type="menu"> <img src={menu} />
-                        Menu</button>
+                    <div className="left-box">
+                        <button type="menu"> <img src={menu} />Menu</button>
                     </div>
 
                     <div className="brasao">
@@ -20,7 +23,7 @@ function Navbar(){
                     </div>
 
                     <div className="right-box">
-                        <div class="rb-input">
+                        <div className="rb-input">
                             <input type="text"  placeholder="Pesquisar.."  />
                         </div>
 
@@ -31,7 +34,7 @@ function Navbar(){
                         </div>
 
                         <div className="rb-button">
-                            <button type="button">Login</button>
+                            <button type="button" onClick={() => {redirect('/login')}} >Login</button>
                         </div>
                     </div>
                     
