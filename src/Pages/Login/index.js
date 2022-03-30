@@ -19,7 +19,8 @@ function Login() {
       email: email,
       password: password,
     }).then(response => {
-      console.log(response);
+      localStorage.setItem('user', response.data.user._id);
+      localStorage.setItem('token', response.data.token);
       redirect('/')
       window.location.reload();
     }).catch(error => {
