@@ -1,7 +1,7 @@
 import './Fonts.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ProtectedRoute } from './Routes/protected.route';
 import Homepage from './Pages/homepage';
-import capa from './Assets/Capa the witcher 3.png';
 import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
@@ -15,8 +15,12 @@ function App() {
     <div className='main'>
       <Router>
         <Routes>
-          <Route  path='/' element={<Homepage banner={capa} />} />
-          <Route  path='/profile' element={<ProfilePage />} />
+          <Route  path='/' element={<Homepage />} />
+          <Route path='/profile' element={<ProtectedRoute />} >
+            {/* Profile page is only accessible if user is logged in */}
+            <Route path='/profile' element={<ProfilePage />} />
+            {/* Profile page is only accessible if user is logged in */}
+          </Route>
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
           <Route  path='*' element={<Error />} />
