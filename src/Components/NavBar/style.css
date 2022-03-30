@@ -27,8 +27,12 @@
 .left-box button{
     font-family: Montserrat;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 23px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     cursor: pointer;
 
@@ -78,7 +82,7 @@
 }
 
 .right-box input:focus{
-    width: 100px;
+    width: 200px;
     color: #FFFFFF;
     background-image: none;
     transition: all 0.4s ease-in-out;
