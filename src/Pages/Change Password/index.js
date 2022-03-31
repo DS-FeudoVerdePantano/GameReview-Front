@@ -4,9 +4,8 @@ import api from '../../services/api';
 import './style.css';
 import brasao from '../../Images/brasaoleao.png'
 
-function Register() {
+function ChangePassword() {
 
-  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('')
@@ -25,7 +24,6 @@ function Register() {
       setPasswordsMatch(true);
 
       await api.post('/auth/register', {
-        name: username,
         email: email,
         password: password,
       }).then(response => {
@@ -44,23 +42,15 @@ function Register() {
 
   return (
     <div className="Tudo">
-      <div className="CaixaRegistro">
-        <h1 className="tituloRegistro">Registro</h1>
+      <div className="CaixaAL">
+        <h1 className="tituloAL">Alterar Senha</h1>
         <form autoComplete="off"
         onSubmit={handleForm}
         >
           <input
-            type='text'
-            id='username'
-            className='inputi'
-            value={username}
-            onChange={event => setUsername(event.target.value)}
-            placeholder='Username'
-          />
-          <input
             type='email'
             id='email'
-            className='inputi'
+            className='inputino'
             value={email}
             onChange={event => setEmail(event.target.value)}
             placeholder='Email'
@@ -68,15 +58,15 @@ function Register() {
           <input
             type='password'
             id='password'
-            className='inputi'
+            className='inputino'
             value={password}
             onChange={event => setPassword(event.target.value)}
-            placeholder='Senha'
+            placeholder='Nova Senha'
           />
           <input
             type='password'
             id='password2'
-            className='inputi'
+            className='inputino'
             value={password2}
             onChange={event => setPassword2(event.target.value)}
             placeholder='Confirmar Senha'
@@ -88,7 +78,7 @@ function Register() {
             :
             <p className='inputError'>Usuário já Existe</p>
           }
-          <button className='register-button' type='submit'>Registro</button>
+          <button className='AL-button' type='submit'>Salvar Alterações</button>
         </form>
 
       </div>
@@ -100,4 +90,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default ChangePassword;
