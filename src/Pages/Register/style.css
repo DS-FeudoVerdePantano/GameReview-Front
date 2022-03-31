@@ -57,7 +57,9 @@ form{
     right: 30px;
     
 }
-
+.Brasao:hover{
+    cursor: pointer;
+}
 .capiv{
     height: 90px;
     width: 110px;

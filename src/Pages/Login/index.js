@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import './style.css' ;
 import brasao from '../../Images/brasaoleao.png'
@@ -66,7 +66,7 @@ function Login() {
       </div>
 
       <div className="Brasao">
-        <img  className="capiv" src={brasao} />
+        <img  className="capiv" src={brasao}  onClick={() => {redirect('/')}}/>
       </div>
     </div>
   );

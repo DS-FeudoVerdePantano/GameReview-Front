@@ -17,7 +17,7 @@ function Navbar(){
                     </div>
 
                     <div className="brasao">
-                        <a href="">
+                        <a href="" onClick={() => {redirect('/')}}>
                             <img src={brasao} alt="logofeudo"/>
                         </a>
                     </div>

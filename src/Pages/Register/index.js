@@ -94,7 +94,7 @@ function Register() {
       </div>
 
       <div className="Brasao">
-        <img  className="capiv" src={brasao} />
+        <img  className="capiv" src={brasao}  onClick={() => {redirect('/')}}/>
       </div>
     </div>
   );
