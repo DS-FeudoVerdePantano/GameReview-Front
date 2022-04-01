@@ -4,7 +4,7 @@
     background: linear-gradient(45deg, #2B0D5F -5.81%, rgba(43, 13, 95, 0) 87.38%);
 }
 
-.tituloRegistro{
+.tituloAL{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -13,17 +13,17 @@
     color: #FFFFFF;
 }
 
-.CaixaRegistro{
+.CaixaAL{
     margin: auto;
     width: 50%;
-    margin-top: 130px;
+    margin-top: 140px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 50px;
 
     width: 450px;
     height: 660px;
@@ -42,15 +42,6 @@ form{
     font-style: normal;
 }
 
-.inputi{
-    margin-bottom: 30px;
-}
-
-.register-button{
-    width: 314px;
-    font-weight: 500;
-}
-
 .Brasao{
     position: absolute;
     bottom: 30px;
@@ -65,32 +56,41 @@ form{
     width: 110px;
 }
 
-.inputi{
+.inputino{
+    margin-bottom: 40px;
+}
+
+.inputino{
     border: 0;
     padding: 0;
     margin: 5;
     box-sizing: border-box;
-
+    
     width: 314px;
     height: 60px;
     color: #fff;
     padding-left: 30px;
     font-size: 15px;
-
+    
     background: #3C3A3A;
     border-radius: 18px;
     outline: none;
 }
 
-.inputi::placeholder{
+.inputino::placeholder{
     color: #fff;
 }
 
-.inputi:focus::placeholder{
+.inputino:focus::placeholder{
     color: #3C3A3A;
 }
 
-.register-button{
+.AL-button{
+    width: 314px;
+    font-weight: 500;
+}
+
+.AL-button{
     border: 0;
     padding: 0;
     margin: 0;
@@ -101,10 +101,10 @@ form{
     font-size: 25px;
     cursor: pointer;
 }
-.register-button:hover{
+.AL-button:hover{
     background-color: #2b0d5f;
 }
-.register-button:active{
+.AL-button:active{
     background-color: #410088;
 }
 
