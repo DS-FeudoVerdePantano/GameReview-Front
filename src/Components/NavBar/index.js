@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import brasao from './../../Images/brasaoleao.png';
 import menu from './../../Images/Sanduiche.svg';
 import perfil from './../../Images/Perfil.svg';
@@ -32,7 +32,7 @@ function Navbar(){
                                 <img src={perfil} alt="logoperfil"/>
                             </a>
                         </div>
-
+                        
                         <div className="rb-button">
                             <button type="button" onClick={() => {redirect('/login')}} >Login</button>
                         </div>
