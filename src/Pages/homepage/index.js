@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import GameApi from '../../services/GameApi';
 import api from '../../services/api';
 import banner from '../../Assets/Capa the witcher 3.png';
 import Navbar from '../../Components/NavBar';
@@ -36,6 +37,9 @@ function Homepage() {
     }
   },[loggedIn, userTokenChecked])
 
+  const topGames = GameApi.get('/games/metacritic').then()
+
+
   return (
     <div className="guizaotop">
       <Navbar />
@@ -52,7 +56,7 @@ function Homepage() {
             <h2>Melhores Avaliados</h2>
             <div className="melhores-avaliados">
               <ul className="sem-marcador inline">
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={topGames} /></a></li>
                 <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
                 <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
               </ul>
