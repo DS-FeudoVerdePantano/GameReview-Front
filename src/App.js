@@ -7,6 +7,7 @@ import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/Change Password';
+import GamePage from './Pages/Game Page';
 import { Error } from './Pages/Error';
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/changepassword' element={<ChangePassword/>} />
+          <Route path='/game/:id' element={<GamePage/>}/>
           <Route  path='*' element={<Error />} />
         </Routes>
       </Router>
