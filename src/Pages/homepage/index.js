@@ -9,6 +9,8 @@ function Homepage() {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [userTokenChecked, setUserTokenChecked] = useState(false)
+  const [link, setLink] = useState('')
+  const [zeldinha, setZeldinha] = useState('')
 
   useEffect(() => {
     
@@ -37,7 +39,18 @@ function Homepage() {
     }
   },[loggedIn, userTokenChecked])
 
-  const topGames = GameApi.get('/games/metacritic').then()
+  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&search=The Witcher 3')
+                  .then(res => {
+                    setLink(res.data.results['0'].background_image)
+                  }).catch(error => {
+                    console.log("error")
+                  })
+  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
+                  .then(res => {
+                    setZeldinha(res.data.results['0'].background_image)
+                  }).catch(error => {
+                    console.log("error")
+                  })
 
 
   return (
@@ -48,7 +61,7 @@ function Homepage() {
         
         <main>
           <div className="banner-principal">
-            <a href="#" ><img src={banner} /></a>
+            <a href="#" ><img src={link} /></a>
           </div>
           
           
@@ -56,18 +69,18 @@ function Homepage() {
             <h2>Melhores Avaliados</h2>
             <div className="melhores-avaliados">
               <ul className="sem-marcador inline">
-                <li className="banner-pequeno"><a href="#"><img src={topGames} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
               </ul>
             </div>
 
             <div className="lancamentos">
               <h2>Lançamentos</h2>
               <ul className="sem-marcador inline">
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={banner} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
+                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
               </ul>
             </div>
           </div>

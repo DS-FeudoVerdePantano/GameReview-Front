@@ -6,7 +6,7 @@ import './style.css';
 
 function Navbar(){
 
-    let redirect = useNavigate()
+    const redirect = useNavigate()
 
     return(
         <>
