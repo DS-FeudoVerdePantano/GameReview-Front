@@ -13,9 +13,10 @@ main{
     padding: 10px 58px;
 }
 .banner-principal{
-    width: 880px;
+    width: 1000px;
     margin: 0 auto;
     margin-top: 25px;
+    padding-bottom: 15px;
 }
 .inline{
     display: flex;
@@ -25,10 +26,14 @@ main{
     justify-content: space-around;
 }
 .banner-pequeno{
+    padding-top: 10px;
     width: 300px;
 }
 ul.sem-marcador{
     list-style: none;
+}
+h3.game-title{
+    text-align: center;
 }
 img{
     width: 100%;

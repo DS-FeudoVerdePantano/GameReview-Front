@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import GameApi from '../../services/GameApi';
 import api from '../../services/api';
-import banner from '../../Assets/Capa the witcher 3.png';
 import Navbar from '../../Components/NavBar';
 import './style.css';
 
@@ -11,6 +11,9 @@ function Homepage() {
   const [userTokenChecked, setUserTokenChecked] = useState(false)
   const [link, setLink] = useState('')
   const [zeldinha, setZeldinha] = useState('')
+  const [nome, pegaNome] = useState('')
+
+  let redirect = useNavigate()
 
   useEffect(() => {
     
@@ -45,6 +48,7 @@ function Homepage() {
                   }).catch(error => {
                     console.log("error")
                   })
+
   GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
                   .then(res => {
                     setZeldinha(res.data.results['0'].background_image)
@@ -52,42 +56,67 @@ function Homepage() {
                     console.log("error")
                   })
 
+  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
+                  .then(res => {
+                    pegaNome(res.data.results['0'].name)
+                  }).catch(error => {
+                    console.log("error")
+                  })
+
 
   return (
-    <div className="guizaotop">
+    <>
       <Navbar />
       <div className="degrade">
-      <div className="main">
+        <div className="main">
         
-        <main>
-          <div className="banner-principal">
-            <a href="#" ><img src={link} /></a>
-          </div>
-          
-          
-          <div className="HighLights">
-            <h2>Melhores Avaliados</h2>
-            <div className="melhores-avaliados">
-              <ul className="sem-marcador inline">
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-              </ul>
+          <main>
+            <div className="banner-principal">
+              <a href="#" onClick={() => {redirect('/' + nome)}} ><img src={link} /></a>
             </div>
+          
+          
+            <div className="HighLights">
+              <h2>Melhores Avaliados</h2>
+              <div className="melhores-avaliados">
+                <ul className="sem-marcador inline">
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>{nome}</h3>
+                  </li>
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>{nome}</h3>
+                  </li>
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>{nome}</h3>
+                  </li>
+                </ul>
+              </div>
 
-            <div className="lancamentos">
-              <h2>Lançamentos</h2>
-              <ul className="sem-marcador inline">
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-                <li className="banner-pequeno"><a href="#"><img src={zeldinha} /></a></li>
-              </ul>
+              <div className="lancamentos">
+                <h2>Lançamentos</h2>
+                <ul className="sem-marcador inline">
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>vapo</h3>
+                  </li>
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>{nome}</h3>
+                  </li>
+                  <li className="banner-pequeno">
+                    <a href="#"><img src={zeldinha} /></a>
+                    <h3 className='game-title'>{nome}</h3>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
-    </div>
-    </div>
+    </>
   );
 }
 
