@@ -117,10 +117,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: font 0.3s ease-in-out 0s;
 
     font-weight: 600;
     font-size: 24px;
-    line-height: 29px;
     text-align: center;
     color: #FFFFFF;
     fill: #FFFFFF;
@@ -130,4 +130,83 @@
     height: 42px;
     width: 31px;
     margin-right: 27px;
+}
+
+.Add-To-List-Button:hover {
+    transition: font 0.3s ease-in-out 0s;
+    font-size: 30px;
+}
+
+/*Styling the Bottom Page*/
+.Bottom-Page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Styling the Content of Bottom Page*/
+.Sec-Content{
+    width: 791px;
+}
+
+/*Styling the Title*/
+.Sec-Title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.titulozo{
+    font-weight: 600;
+    font-size: 38px;
+    padding: 10px 22px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: 5px solid #7232E7;
+    border-radius: 25.5px;
+}
+
+/*Styling the Sinopse*/
+.Sinopse-Text{
+    margin-bottom: 60px;
+    width: 790px;
+}
+
+.Sec-Content-Title-Left{
+    font-size: 24px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+    padding-left: 5px;
+    border-left: 8px solid #7232E7;
+}
+
+/*Styling the Rest of the Info*/
+.Sec-Rest-Info{
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Sec-Content-Title-Right{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: right;
+
+    margin-bottom: 20px;
+    padding-right: 5px;
+    border-right: 8px solid #7232E7;
+}
+
+.Topzeira{
+    margin-bottom: 41px;
+}
+
+.RI-Right-Text{
+    text-align: right;
+}
+
+.Sec-Left-Text, .Sec-Right-Text{
+    max-width: 275px;
 }
