@@ -60,85 +60,27 @@ function Homepage() {
                     console.log("error")
                   })
   //gambiarra primeiro mais bem avaliado
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
+  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=4')
                   .then(res => {
                     setZeldinha(res.data.results['0'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-                  
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
-                  .then(res => {
                     pegaNome(res.data.results['0'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-  //gambiarra do segundo
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=4')
-                  .then(res => {
                     setMeta2(res.data.results['3'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-                  
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=4')
-                  .then(res => {
                     setName2(res.data.results['3'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-  //gambiarra do terceiro
-                  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
-                  .then(res => {
                     setMeta3(res.data.results['2'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=3')
-                  .then(res => {
                     setName3(res.data.results['2'].name)
                   }).catch(error => {
                     console.log("error")
                   })
+              
 
   GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
                   .then(res => {
+                    
                     setNew(res.data.results['0'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
                     setNewName(res.data.results['0'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-                  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
-                    setNew2(res.data.results['1'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
                     setNewName2(res.data.results['1'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-                  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
+                    setNew2(res.data.results['1'].background_image)
                     setNew3(res.data.results['2'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
                     setNewName3(res.data.results['2'].name)
                   }).catch(error => {
                     console.log("error")
