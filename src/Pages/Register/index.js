@@ -31,6 +31,7 @@ function Register() {
       }).then(response => {
         localStorage.setItem('user', response.data.user._id);
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('name', response.data.user.name);
         console.log(response);
         redirect('/')
         window.location.reload();

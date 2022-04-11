@@ -2,7 +2,7 @@ import './Fonts.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './Routes/protected.route';
 import './Components/scrollbar/style.css';
-import Homepage from './Pages/homepage';
+import Homepage from './Pages/Homepage';
 import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
@@ -25,7 +25,9 @@ function App() {
           </Route>
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
-          <Route path='/changepassword' element={<ChangePassword/>} />
+          <Route path='/changepassword' element={<ProtectedRoute />} >
+            <Route path='/changepassword' element={<ChangePassword/>} />
+          </Route>
           <Route  path='*' element={<Error />} />
         </Routes>
       </Router>
