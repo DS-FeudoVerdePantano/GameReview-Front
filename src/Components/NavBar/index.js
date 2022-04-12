@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import brasao from './../../Images/brasaoleao.png';
-import menu from './../../Images/Sanduiche.svg';
 import perfil from './../../Images/Perfil.svg';
+import ButtonMenu from '../Dropdown Menu';
+
 import './style.css';
+
 
 function Navbar(){
 
@@ -13,11 +15,13 @@ function Navbar(){
             <div className="tudaokrl">
                 <div className="conteudo">
                     <div className="left-box">
-                        <button type="menu"> <img src={menu} />Menu</button>
+                        
+                        <ButtonMenu  />
+                        
                     </div>
 
                     <div className="brasao">
-                        <a href="" onClick={() => {redirect('/')}}>
+                        <a href="" onClick={() => {redirect('/')}  }>
                             <img src={brasao} alt="logofeudo"/>
                         </a>
                     </div>
