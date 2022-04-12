@@ -13,3 +13,6 @@
     width: 139px;
     align-items: center;
 }
+.menu-option{
+    cursor: pointer;
+}

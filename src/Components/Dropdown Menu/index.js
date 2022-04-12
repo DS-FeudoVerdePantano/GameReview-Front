@@ -4,9 +4,6 @@ import './style.css';
 
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-
-
-
 function ButtonMenu(){
     let redirect = useNavigate()
 
@@ -27,14 +24,18 @@ function ButtonMenu(){
 
                         
 
-                            <DropdownMenu.Item onClick={() => {redirect('/profile')}}> 
-                                <a href='' >Configurações</a>
+                            <DropdownMenu.Item className='menu-option' onClick={() => {redirect('/profile')}}> 
+                                <p>Configurações</p>
                             </DropdownMenu.Item>
 
                             <DropdownMenu.Separator className='linha'/>
 
-                            <DropdownMenu.Item onClick={() => {redirect('/')}}> 
-                                <a href='' >Desconectar</a>
+                            <DropdownMenu.Item className='menu-option' onClick={() => {
+                                    localStorage.removeItem('token')
+                                    redirect('/')
+                                    window.location.reload();
+                                }}> 
+                                <p>Desconectar</p>
                             </DropdownMenu.Item>
 
                     
