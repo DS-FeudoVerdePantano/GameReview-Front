@@ -27,7 +27,7 @@ function App() {
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/changepassword' element={<ChangePassword/>} />
-          <Route path='/game/:game_name' element={<GamePage/>}/>
+          <Route path='/game/:slug' element={<GamePage/>}/>
           <Route  path='*' element={<Error />} />
         </Routes>
       </Router>

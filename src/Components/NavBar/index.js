@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'
 import api from '../../services/api';
+import gameApi from '../../services/GameApi';
 import brasao from './../../Images/brasaoleao.png';
 import menu from './../../Images/Sanduiche.svg';
 import perfil from './../../Images/Perfil.svg';
 import './style.css';
-import gameApi from '../../services/GameApi';
 
 function Navbar(){
 
@@ -13,6 +13,7 @@ function Navbar(){
 
     const [username, setUsername] = useState(null)
     const [search, setSearch] = useState(null)
+    const [slug, setSlug] = useState(null)
 
     useEffect(() => {
     
@@ -28,7 +29,7 @@ function Navbar(){
             console.log('User is logged in');
             setUsername(localStorage.getItem('name'));
           }).catch(error => {
-    
+            console.log('User not logged in')
           })
         }
     
@@ -39,12 +40,16 @@ function Navbar(){
       },[])
 
       useEffect(() => {
-        gameApi.get(`/games?key=c08f80574bca406bbcf96b7e452b3e91&search=${search}`)
-        .then(res => {
-            console.log(res)
-        }).catch(error => {
-            
-        })
+        async function getGames(){
+            await gameApi.get(`/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=${search}&search_exact=true&ordering=-metacritic&page_size=6`)
+            .then(res => {
+              console.log(res.data)
+              setSlug(res.data.results['0'].slug)
+            }).catch(error => {
+                
+            })
+        }
+        if(search) getGames()
       }, [search])
 
     return(
@@ -63,7 +68,11 @@ function Navbar(){
 
                     <div className="right-box">
                         <div className="rb-input">
-                            <input type="text"  placeholder="Pesquisar.."  onChange={(e) => setSearch(e.target.value)}/>
+                            <input type="text"  placeholder="Pesquisar.."  onChange={(e) => setSearch(e.target.value)} onKeyPress={e => {if(e.key === 'Enter') {
+                              redirect(`/game/${slug}`)
+                              window.location.reload();
+                              }}}
+                            />
                         </div>
 
                         <div className="rb-perfil">

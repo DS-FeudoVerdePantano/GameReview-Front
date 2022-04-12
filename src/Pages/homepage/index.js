@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import api from '../../services/api';
+import React from 'react';
 import banner from '../../Assets/Capa the witcher 3.png';
 import Navbar from '../../Components/NavBar';
 import './style.css';
