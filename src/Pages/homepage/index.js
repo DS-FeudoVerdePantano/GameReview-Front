@@ -53,38 +53,55 @@ function Homepage() {
     }
   },[loggedIn, userTokenChecked])
   
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&search=The Witcher 3')
-                  .then(res => {
-                    setLink(res.data.results['0'].background_image)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-  //gambiarra primeiro mais bem avaliado
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&metacritic&ordering=-metacritic&page_size=4')
-                  .then(res => {
-                    setZeldinha(res.data.results['0'].background_image)
-                    pegaNome(res.data.results['0'].name)
-                    setMeta2(res.data.results['3'].background_image)
-                    setName2(res.data.results['3'].name)
-                    setMeta3(res.data.results['2'].background_image)
-                    setName3(res.data.results['2'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
-              
+  useEffect(() => {
+  
+    async function fetchWitcherImage(){ 
+        await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=The Witcher 3')
+        .then(res => {
+          setLink(res.data.results['0'].background_image)
+        }).catch(error => {
+          console.log("error")
+        }
+      )
+    }
 
-  GameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&dates&ordering=released&page_size=3')
-                  .then(res => {
-                    
-                    setNew(res.data.results['0'].background_image)
-                    setNewName(res.data.results['0'].name)
-                    setNewName2(res.data.results['1'].name)
-                    setNew2(res.data.results['1'].background_image)
-                    setNew3(res.data.results['2'].background_image)
-                    setNewName3(res.data.results['2'].name)
-                  }).catch(error => {
-                    console.log("error")
-                  })
+    //gambiarra primeiro mais bem avaliado
+    async function fetchBestRated(){
+      await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&metacritic&ordering=-metacritic&page_size=4')
+        .then(res => {
+          setZeldinha(res.data.results['0'].background_image)
+          pegaNome(res.data.results['0'].name)
+          setMeta2(res.data.results['3'].background_image)
+          setName2(res.data.results['3'].name)
+          setMeta3(res.data.results['2'].background_image)
+          setName3(res.data.results['2'].name)
+        }).catch(error => {
+          console.log("error")
+        }
+      )
+    }           
+
+    async function fetchNewReleases(){
+      await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&dates&ordering=released&page_size=3')
+        .then(res => {
+          
+          setNew(res.data.results['0'].background_image)
+          setNewName(res.data.results['0'].name)
+          setNewName2(res.data.results['1'].name)
+          setNew2(res.data.results['1'].background_image)
+          setNew3(res.data.results['2'].background_image)
+          setNewName3(res.data.results['2'].name)
+        }).catch(error => {
+          console.log("error")
+        }
+      )
+    }
+
+    fetchWitcherImage()
+    fetchBestRated()
+    fetchNewReleases()
+
+  },[])
 
 
 
