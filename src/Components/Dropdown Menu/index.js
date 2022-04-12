@@ -20,28 +20,28 @@ function ButtonMenu(){
                         
                 </DropdownMenu.Trigger>
 
-                <div className='caixinha'>
                     <DropdownMenu.Content sideOffset={5}>
 
-                        <DropdownMenu.Arrow />
+                        <DropdownMenu.Arrow className='flexuda'/>
+                        <div className='caixinha'>
 
                         
 
-                        <DropdownMenu.Item onClick={() => {redirect('/profile')}}> 
-                            <a href='' >Configurações</a>
-                        </DropdownMenu.Item>
+                            <DropdownMenu.Item onClick={() => {redirect('/profile')}}> 
+                                <a href='' >Configurações</a>
+                            </DropdownMenu.Item>
 
-                        <DropdownMenu.Separator />
+                            <DropdownMenu.Separator className='linha'/>
 
-                        <DropdownMenu.Item onClick={() => {redirect('/')}}> 
-                            <a href='' >Desconectar</a>
-                        </DropdownMenu.Item>
+                            <DropdownMenu.Item onClick={() => {redirect('/')}}> 
+                                <a href='' >Desconectar</a>
+                            </DropdownMenu.Item>
 
                     
+                        </div>
 
                         
                     </DropdownMenu.Content>
-                </div>
             </DropdownMenu.Root>
         </>
     )

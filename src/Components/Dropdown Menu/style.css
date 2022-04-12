@@ -1,0 +1,15 @@
+.flexuda{
+    fill: #7232E7;
+}
+.linha{
+    height: 1px;
+    margin: 5px 0px;
+    background-color: #7232E7;
+}
+.caixinha{
+    background-color: #262626;
+    border-radius: 10px;
+    border: 1px solid #7232E7;
+    width: 139px;
+    align-items: center;
+}
