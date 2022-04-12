@@ -1,10 +1,53 @@
 import './style.css';
+import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
 import AddLista from '../../Images/AddLista.svg'
 import Navbar from '../../Components/NavBar';
+import gameApi from '../../services/GameApi';
 
 function GamePage(props) {
-    const {id}=useParams();
+
+    const {game_name} = useParams();
+
+    const [id, setId] = useState(null)
+    const [description, setDescription] = useState(null)
+    const [developers, setDevelopers] = useState(null)
+    const [platforms, setPlatforms] = useState(null)
+    const [genres, setGenres] = useState(null)
+    const [releaseDate, setReleaseDate] = useState(null)
+    const [image, setImage] = useState('')
+    const [screenshot, setScreenshot] = useState('')
+
+    useEffect(() => {
+
+        async function fetchGameInfo(id){
+            await gameApi.get(`/games/${id}?key=c08f80574bca406bbcf96b7e452b3e91`)
+                .then(res => {
+                    console.log(res)
+                    setDevelopers(res.data.developers)
+                    setDescription(res.data.description_raw)
+                }).catch(error => {
+
+                }
+            )
+        }
+
+        async function fetchImages() {
+            await gameApi.get('/games?key=c08f80574bca406bbcf96b7e452b3e91&search=the-witcher-3-wild-hunt&search_exact=true')
+                .then(res => {
+                    console.log(res)
+                    let id = res.data.results['0'].id
+                    setImage(res.data.results['0'].background_image)
+                    setImage(res.data.results['0'].background_image)
+                    setScreenshot(res.data.results['0'].short_screenshots['1'].image)
+                    fetchGameInfo(id)
+                }).catch(error => {
+                    console.log(error)
+                }
+            )
+        }
+        fetchImages()
+    }, [])
 
     return (
         <div>
@@ -13,19 +56,19 @@ function GamePage(props) {
         <div className='Top-Page'>
             <div className='Main-Content'>
                 <div className='Game-Title'>
-                    <h1>{id}</h1>
+                    <h1>{game_name}</h1>
                 </div>
 
                 <div className='Game-Content'>
                     <div className='Game-Cover'>
-                        <p>Capa<br/>do<br/>Jogo</p>
+                        <img src={image}></img>
                     </div>
                     <div className='Game-Trailer'>
                         <p>Trailer do Jogo</p>
                     </div>
                     <div className='Game-Images'>
                         <div className='imageone'>
-                            <p>Foto</p>
+                            <img src={screenshot} />
                         </div>
 
                         <div className='imageone'>
@@ -56,12 +99,12 @@ function GamePage(props) {
         <div className='Bottom-Page'>
             <div className='Sec-Content'>
                 <div className='Sec-Title'>
-                    <p className='titulozo'>Sobre {id}</p>
+                    <p className='titulozo'>Sobre {game_name}</p>
                 </div>
 
                 <div className='Sec-Sinopse'>
                     <p className='Sec-Content-Title-Left'>Sinopse</p>
-                    <p className='Sinopse-Text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum scelerisque ligula, nec semper est malesuada id. Pellentesque non dictum odio, at fringilla quam. Donec fringilla iaculis eleifend. Integer sed commodo nisl, ut fringilla arcu. Pellentesque faucibus sodales dolor, et pharetra nulla mollis non. Nulla at luctus magna, vulputate dictum diam. Nulla in urna pellentesque, volutpat tellus at, aliquam elit. Suspendisse faucibus justo in risus varius, vel maximus metus malesuada. Nullam accumsan ipsum a placerat placerat. Mauris condimentum ante at tristique volutpat. Nam et aliquet ipsum. Morbi sed purus felis. Sed vel maximus nisl.</p>
+                    <p className='Sinopse-Text'>{description}</p>
                 </div>
 
                 <div className='Sec-Rest-Info'>
@@ -74,8 +117,8 @@ consectetur adipiscing elit.</p>
 
                         <div className='RI-Bottom-Left'>
                             <p className='Sec-Content-Title-Left'>Desenvolvedor</p>
-                            <p className='RI-Left-Text'>Lorem ipsum dolor sit amet,
-consectetur adipiscing elit.</p>
+                            {/* {developers.map((developer, i) => <p className='RI-Left-Text' key={i}>{developer}</p>)} */}
+                            <p className='RI-Left-Text'>Lorem ipsum dolor sit amet,</p>
                         </div>
                     </div>
 
