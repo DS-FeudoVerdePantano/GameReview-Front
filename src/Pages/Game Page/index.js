@@ -64,25 +64,17 @@ function GamePage(props) {
                 </div>
 
                 <div className='Game-Content'>
-                    <div className='Game-Cover'>
-                        {screenshots ? <img src={screenshots[0].image}></img> : <img alt='loading'></img>}
-                    </div>
                     <div className='Game-Trailer'>
                         {/* <p>Trailer do Jogo</p> */}
-                        {screenshots ? <img src={screenshots[0].image}></img> : <img alt='loading'></img>}
+                        {screenshots ? <img src={screenshots[0].image} width="662.94px" height="417px"></img> : <img alt='loading'></img>}
                     </div>
                     <div className='Game-Images'>
                         <div className='imageone'>
-                            {screenshots ? <img src={screenshots[1].image} /> : <img alt='loading'></img>}
+                            {screenshots ? <img src={screenshots[1].image} width="300px" height="197px"/> : <img alt='loading'></img>}
                         </div>
 
                         <div className='imageone'>
-                            {screenshots ? <img src={screenshots[2].image} /> : <img alt='loading'></img>}
-                        </div>
-
-                        <div className='moreimages'>
-                            <p>Ver</p>
-                            <p>+ fotos</p>
+                            {screenshots ? <img src={screenshots[2].image} width="300px" height="197px"/> : <img alt='loading'></img>}
                         </div>
                     </div>
                 </div>

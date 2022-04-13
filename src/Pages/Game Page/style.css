@@ -41,22 +41,14 @@
     color: #000000;
 }
 
-.Game-Cover{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 264.06px;
-    height: 390.51px;
-    background: #C4C4C4;
-}
-
 .Game-Trailer{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 662.94px;
-    height: 390.51px;
+    height: 420px;
     background: #C4C4C4;
+    border: 2px solid #FFFFFF;
 
     margin-left: 15px;
     margin-right: 15px;
@@ -66,22 +58,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 130.17px;
-    height: 130.17px;
-    margin-bottom: 14px;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
     background: #C4C4C4;
+    border: 2px solid #FFFFFF;
 }
 
-.moreimages{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 130.17px;
-    height: 102.28px;
-    background: #C4C4C4;
-    font-size: 25px;
-}
 
 /*Styling the score and list button*/
 .Game-Score-List{
