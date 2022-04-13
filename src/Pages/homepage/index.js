@@ -10,21 +10,76 @@ function Homepage() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userTokenChecked, setUserTokenChecked] = useState(false)
   const [link, setLink] = useState('')
-  const [zeldinha, setZeldinha] = useState('')
-  const [nome, pegaNome] = useState('')
-  const [meta2, setMeta2] = useState('')
-  const [name2, setName2] = useState('')
-  const [meta3, setMeta3] = useState('')
-  const [name3, setName3] = useState('')
-  const [New, setNew] = useState('')
-  const [new2, setNew2] = useState('')
-  const [new3, setNew3] = useState('')
-  const [newName, setNewName] = useState('')
-  const [newName2, setNewName2] = useState('')
-  const [newName3, setNewName3] = useState('')
+  const [name, setName] = useState('')
+  const [bestGames, setBestGames] = useState([])
+  const [newReleases, setNewReleases] = useState([])
 
 
   let redirect = useNavigate()
+
+  async function fetchWitcherImage(){ 
+    await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=The Witcher 3')
+    .then(res => {
+      setLink(res.data.results['0'].background_image)
+      setName(res.data.results['0'].name)
+    }).catch(error => {
+      console.log("error")
+    }
+  )
+}
+
+//gambiarra primeiro mais bem avaliado
+async function fetchBestRated(){
+  await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&platforms_count=2&ordering=-metacritic&page_size=5')
+  .then(res => {
+    let max = 3
+    for(let i = 0; i < max; i++){
+        let image = res.data.results[i.toString()].background_image
+        while(!image){
+            max += 1
+            i += 1
+            image = res.data.results[i.toString()].background_image 
+        }
+        let name = res.data.results[i.toString()].name
+        let slug = res.data.results[i.toString()].slug
+        setBestGames(prevGames => [...prevGames, {name: name, image: image, slug: slug}])
+    }
+  }).catch(error => {
+    console.log("error")
+  }
+)
+}           
+
+async function fetchNewReleases(){
+  await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&metacritic=90,100&ordering=-released&page_size=5')
+  .then(res => {
+    let max = 3
+    for(let i = 0; i < max; i++){
+        let image = res.data.results[i.toString()].background_image
+        while(!image){
+            max += 1
+            i += 1
+            image = res.data.results[i.toString()].background_image 
+        }
+        let name = res.data.results[i.toString()].name
+        let slug = res.data.results[i.toString()].slug
+        setNewReleases(prevGames => [...prevGames, {name: name, image: image, slug: slug}])
+    }
+    }).catch(error => {
+      console.log("error")
+    }
+  )
+}
+
+  useEffect(() => { // Called when the function first rendered
+
+    fetchWitcherImage()
+    fetchBestRated()
+    fetchNewReleases()
+
+    console.log(bestGames)
+
+  },[])
 
   useEffect(() => {
     
@@ -52,68 +107,15 @@ function Homepage() {
       setLoggedIn(true);
     }
   },[loggedIn, userTokenChecked])
-  
-  useEffect(() => {
-  
-    async function fetchWitcherImage(){ 
-        await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=The Witcher 3')
-        .then(res => {
-          setLink(res.data.results['0'].background_image)
-        }).catch(error => {
-          console.log("error")
-        }
-      )
-    }
 
-    //gambiarra primeiro mais bem avaliado
-    async function fetchBestRated(){
-      await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&metacritic&ordering=-metacritic&page_size=4')
-        .then(res => {
-          setZeldinha(res.data.results['0'].background_image)
-          pegaNome(res.data.results['0'].name)
-          setMeta2(res.data.results['3'].background_image)
-          setName2(res.data.results['3'].name)
-          setMeta3(res.data.results['2'].background_image)
-          setName3(res.data.results['2'].name)
-        }).catch(error => {
-          console.log("error")
-        }
-      )
-    }           
-
-    async function fetchNewReleases(){
-      await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&dates&ordering=released&page_size=3')
-        .then(res => {
-          
-          setNew(res.data.results['0'].background_image)
-          setNewName(res.data.results['0'].name)
-          setNewName2(res.data.results['1'].name)
-          setNew2(res.data.results['1'].background_image)
-          setNew3(res.data.results['2'].background_image)
-          setNewName3(res.data.results['2'].name)
-        }).catch(error => {
-          console.log("error")
-        }
-      )
-    }
-
-    fetchWitcherImage()
-    fetchBestRated()
-    fetchNewReleases()
-
-  },[])
-
-
-
-  return (
-    <>
-      <Navbar />
+  function Main(){
+    return(
       <div className="degrade">
         <div className="main">
         
           <main>
             <div className="banner-principal">
-              <a href="#" onClick={() => {redirect('/' + nome)}} ><img src={link} /></a>
+              <img src={link} onClick={() => {redirect('/game/' + name)}} alt='main game' />
             </div>
           
           
@@ -122,16 +124,16 @@ function Homepage() {
               <div className="melhores-avaliados">
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
-                    <a href="#"><img src={zeldinha} /></a>
-                    <h3 className='game-title'>{nome}</h3>
+                    <a href={'/game/' + bestGames['0'].slug}><img src={bestGames['0'].image} alt='1st game' /></a>
+                    <h3 className='game-title'>{bestGames['0'] ? bestGames['0'].name : 'Loading'}</h3>
                   </li>
                   <li className="banner-pequeno">
-                    <a href="#"><img src={meta2} /></a>
-                    <h3 className='game-title'>{name2}</h3>
+                    <a href={'/game/' + bestGames['1'].slug}><img src={bestGames['1'].image} alt='2nd game' /></a>
+                    <h3 className='game-title'>{bestGames['1'] ? bestGames['1'].name : 'Loading'}</h3>
                   </li>
                   <li className="banner-pequeno">
-                    <a href="#"><img src={meta3} /></a>
-                    <h3 className='game-title'>{name3}</h3>
+                    <a href={'/game/' + bestGames['2'].slug}><img src={bestGames['2'].image} alt='3rd game' /></a>
+                    <h3 className='game-title'>{bestGames['2'] ? bestGames['2'].name : 'Loading'}</h3>
                   </li>
                 </ul>
               </div>
@@ -140,16 +142,16 @@ function Homepage() {
                 <h2>Lançamentos</h2>
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
-                    <a href="#"><img src={New} /></a>
-                    <h3 className='game-title'>{newName}</h3>
+                    <a href={'/game/' + newReleases['0'].slug}><img src={newReleases['0'].image} alt='1st game' /></a>
+                    <h3 className='game-title'>{newReleases['0'] ? newReleases['0'].name : ''}</h3>
                   </li>
                   <li className="banner-pequeno">
-                    <a href="#"><img src={new2} /></a>
-                    <h3 className='game-title'>{newName2}</h3>
+                    <a href={'/game/' + newReleases['1'].slug}><img src={newReleases['1'].image} alt='2nd game' /></a>
+                    <h3 className='game-title'>{newReleases['1'] ? newReleases['1'].name : ''}</h3>
                   </li>
                   <li className="banner-pequeno">
-                    <a href="#"><img src={new3} /></a>
-                    <h3 className='game-title'>{newName3}</h3>
+                    <a href={'/game/' + newReleases['2'].slug}><img src={newReleases['2'].image} alt='3rd game' /></a>
+                    <h3 className='game-title'>{newReleases['2'] ? newReleases['2'].name : ''}</h3>
                   </li>
                 </ul>
               </div>
@@ -157,6 +159,18 @@ function Homepage() {
           </main>
         </div>
       </div>
+    )
+  }
+
+  return (
+    <> 
+      <Navbar />
+
+      { bestGames['2'] && newReleases['2'] ? 
+      <Main />
+      :
+        <h1>Loading...</h1>
+      }
     </>
   );
 }

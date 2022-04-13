@@ -17,6 +17,7 @@ main{
     margin: 0 auto;
     margin-top: 25px;
     padding-bottom: 15px;
+    cursor: pointer;
 }
 .inline{
     display: flex;
@@ -28,6 +29,7 @@ main{
 .banner-pequeno{
     padding-top: 10px;
     width: 300px;
+    cursor: pointer;
 }
 ul.sem-marcador{
     list-style: none;
