@@ -120,7 +120,7 @@ async function fetchNewReleases(){
           
           
             <div className="HighLights">
-              <h2>Melhores Avaliados</h2>
+              <h2 className='titulindafiel' >Melhores Avaliados</h2>
               <div className="melhores-avaliados">
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
@@ -139,10 +139,10 @@ async function fetchNewReleases(){
               </div>
 
               <div className="lancamentos">
-                <h2>Lançamentos</h2>
+                <h2 className='titulindafiel'>Lançamentos</h2>
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
-                    <a href={'/game/' + newReleases['0'].slug}><img src={newReleases['0'].image} alt='1st game' /></a>
+                    <a href={'/game/' + newReleases['0'].slug}><img width='282px' height='168px' src={newReleases['0'].image} alt='1st game' /></a>
                     <h3 className='game-title'>{newReleases['0'] ? newReleases['0'].name : ''}</h3>
                   </li>
                   <li className="banner-pequeno">
