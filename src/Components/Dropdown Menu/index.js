@@ -25,7 +25,7 @@ function ButtonMenu(){
                         
 
                             <DropdownMenu.Item className='menu-option' onClick={() => {redirect('/profile')}}> 
-                                <p>Configurações</p>
+                                <p>Settings</p>
                             </DropdownMenu.Item>
 
                             <DropdownMenu.Separator className='linha'/>
@@ -35,7 +35,7 @@ function ButtonMenu(){
                                     redirect('/')
                                     window.location.reload();
                                 }}> 
-                                <p>Desconectar</p>
+                                <p>Disconnect</p>
                             </DropdownMenu.Item>
 
                     

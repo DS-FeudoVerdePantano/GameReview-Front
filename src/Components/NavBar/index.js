@@ -31,12 +31,6 @@ function Navbar(){
                             <input type="text"  placeholder="Pesquisar.."  />
                         </div>
 
-                        <div className="rb-perfil">
-                            <a href="">
-                                <img src={perfil} alt="logoperfil"/>
-                            </a>
-                        </div>
-
                         <div className="rb-button">
                             <button type="button" onClick={() => {redirect('/login')}} >Login</button>
                         </div>
