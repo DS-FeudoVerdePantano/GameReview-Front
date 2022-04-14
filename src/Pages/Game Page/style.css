@@ -69,8 +69,7 @@
 /*Styling the score and list button*/
 .Game-Score-List{
     width: 1200px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 523px;
     margin-bottom: 44px;
     display: flex;
     flex-direction: row;
@@ -87,32 +86,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.Add-To-List-Button{
-    cursor: pointer;
-    background: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: font 0.3s ease-in-out 0s;
-
-    font-weight: 600;
-    font-size: 24px;
-    text-align: center;
-    color: #FFFFFF;
-    fill: #FFFFFF;
-}
-
-.Add-To-List-Button img{
-    height: 42px;
-    width: 31px;
-    margin-right: 27px;
-}
-
-.Add-To-List-Button:hover {
-    transition: font 0.3s ease-in-out 0s;
-    font-size: 30px;
 }
 
 /*Styling the Bottom Page*/

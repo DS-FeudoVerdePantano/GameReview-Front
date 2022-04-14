@@ -68,7 +68,7 @@ function GamePage(props) {
                         <div className='Game-Content'>
                             <div className='Game-Trailer'>
                                 {/* <p>Trailer do Jogo</p> */}
-                                {screenshots && screenshots[0] ? <img src={screenshots[0].image} width="300px" height="197px"/> : <p>Loading...</p>}
+                                {screenshots && screenshots[0] ? <img src={screenshots[0].image} width="660px" height="417px"/> : <p>Loading...</p>}
                             </div>
                             <div className='Game-Images'>
                                 <div className='imageone'>
@@ -83,7 +83,7 @@ function GamePage(props) {
 
                         <div className='Game-Score-List'>
                                 <div className='Public-Score'>
-                                    <p>Avaliação do Público</p>
+                                    <p>Public Rating</p>
                                     <p>{metacritic} / 100</p>
                                 </div>
 
@@ -94,35 +94,35 @@ function GamePage(props) {
                 <div className='Bottom-Page'>
                     <div className='Sec-Content'>
                         <div className='Sec-Title'>
-                            <p className='titulozo'>Sobre {name}</p>
+                            <p className='titulozo'>About {name}</p>
                         </div>
 
                         <div className='Sec-Sinopse'>
-                            <p className='Sec-Content-Title-Left'>Sinopse</p>
+                            <p className='Sec-Content-Title-Left'>Sinopsis</p>
                             <p className='Sinopse-Text'>{description}</p>
                         </div>
 
                         <div className='Sec-Rest-Info'>
                             <div className='Sec-Left-Text'>
                                 <div className='Topzeira RI-Top-Left'>
-                                    <p className='Sec-Content-Title-Left'>Plataformas</p>
+                                    <p className='Sec-Content-Title-Left'>Plataforms</p>
                                     {platforms.map((platform, i) => <p className='RI-Left-Text' key={i}>{platform.platform.name}</p>)}
                                 </div>
 
                                 <div className='RI-Bottom-Left'>
-                                    <p className='Sec-Content-Title-Left'>Desenvolvedor</p>
+                                    <p className='Sec-Content-Title-Left'>Developer</p>
                                     {developers.map((developer, i) => <p className='RI-Left-Text' key={i}>{developer.name}</p>)}
                                 </div>
                             </div>
 
                             <div className='Sec-Right-Text'>
                                 <div className='Topzeira RI-Top-Right'>
-                                    <p className='Sec-Content-Title-Right'>Gênero</p>
+                                    <p className='Sec-Content-Title-Right'>Genre</p>
                                     {genres.map((genre, i) => <p className='RI-Right-Text' key={i}>{genre.name}</p>)}
                                 </div>
 
                                 <div className='RI-Bottom-Right'>
-                                    <p className='Sec-Content-Title-Right'>Data de Lançamento</p>
+                                    <p className='Sec-Content-Title-Right'>Release Date</p>
                                     <p className='RI-Right-Text'>{releaseDate}</p>
                                 </div>
                             </div>
