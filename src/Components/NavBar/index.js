@@ -15,6 +15,12 @@ function Navbar(){
     const [search, setSearch] = useState(null)
     const [slug, setSlug] = useState(null)
 
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    async function sleep(time){
+      await delay(time)
+    }
+
     useEffect(() => {
     
         const config = {
@@ -41,7 +47,7 @@ function Navbar(){
 
       useEffect(() => {
         async function getGames(){
-            await gameApi.get(`/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=${search}&search_exact=true&ordering=-metacritic&page_size=6`)
+            await gameApi.get(`/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=${search}&search_exact=true&ordering=-metacritic`) //&page_size=6
             .then(res => {
               console.log(res.data)
               setSlug(res.data.results['0'].slug)
@@ -69,6 +75,7 @@ function Navbar(){
                     <div className="right-box">
                         <div className="rb-input">
                             <input type="text"  placeholder="Pesquisar.."  onChange={(e) => setSearch(e.target.value)} onKeyPress={e => {if(e.key === 'Enter') {
+                              sleep(6000)
                               redirect(`/game/${slug}`)
                               window.location.reload();
                               }}}
