@@ -1,6 +1,7 @@
 import './Fonts.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './Routes/protected.route';
+
 import './Components/scrollbar/style.css';
 import Homepage from './Pages/Homepage';
 import ProfilePage from './Pages/Profile'
@@ -15,6 +16,7 @@ function App() {
 
 
   return (
+
     <div className='main'>
       <Router>
         <Routes>
@@ -29,6 +31,7 @@ function App() {
           <Route path='/changepassword' element={<ChangePassword/>} />
           <Route path='/game/:id' element={<GamePage/>}/>
           <Route  path='*' element={<Error />} />
+
         </Routes>
       </Router>
     </div>

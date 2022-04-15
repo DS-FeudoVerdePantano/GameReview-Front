@@ -2,6 +2,7 @@ import './style.css';
 import BasicButton from '../../Components/basic button';
 import logo from './../../Assets/Maicu Neimah 1.png';
 import BasicInput from '../../Components/basic input';
+
 function ProfilePage() {
   return (
     <div className="Profile">
@@ -13,7 +14,7 @@ function ProfilePage() {
             <div className="Foto">
               <ul className="caixote-esquerdo">
                   <li ><h3>Foto de Perfil</h3></li>
-                  <li className="Fotenha" ><a href="#"><img src={logo} width="272px" /></a></li>
+                  <li className="Fotenha" ><a href="#"><img src={logo} /></a></li>
                   <li ><a href="#"><h2>Alterar a Senha</h2></a></li>
               </ul>
             </div>
