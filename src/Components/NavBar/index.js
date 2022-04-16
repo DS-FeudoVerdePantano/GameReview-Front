@@ -12,9 +12,10 @@ function Navbar(){
     let redirect = useNavigate()
 
     const [username, setUsername] = useState(null)
-    const [search, setSearch] = useState({})
-    const [slug, setSlug] = useState({})
-    var searchList = []
+    const [search, setSearch] = useState(null)
+    const [slug, setSlug] = useState(null)
+
+    const [searchList, setList] = useState([])
     const delay = ms => new Promise(res => setTimeout(res, ms));
 
     async function sleep(time){
@@ -51,12 +52,11 @@ function Navbar(){
             .then(res => {
               console.log(res.data)
               setSlug(res.data.results['0'].slug)
-              searchList=[
-                res.data.results['0'].name,
-                res.data.results['1'].name,
-                res.data.results['2'].name,
-              ]
-              console.log(searchList)
+              
+              setList([res.data.results['0'].name,
+              res.data.results['1'].name,
+              res.data.results['2'].name])
+             
             }).catch(error => {
                 
             })
@@ -90,16 +90,11 @@ function Navbar(){
 
                         <div className='searchList'>
 
-                          {/*{searchList && (
-                            <ul> 
-                              {searchList.map((listItem) =>(
-                                <li key={listItem.id}>{listItem}</li>
-                              )) }
-                            </ul> 
-                          )} */}
                           
                           <ul>
                             <li>{searchList['0']}</li>
+                            <li>{searchList['1']}</li>
+                            <li>{searchList['2']}</li>
                           </ul>
                         </div>  
                            
