@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './Routes/protected.route';
-import './Normilaze.css';
+//import './Normilaze.css';
 import './Fonts.css';
 import './Components/scrollbar/style.css';
 import Homepage from './Pages/Homepage';

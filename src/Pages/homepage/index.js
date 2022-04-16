@@ -10,7 +10,7 @@ function Homepage() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userTokenChecked, setUserTokenChecked] = useState(false)
   const [link, setLink] = useState('')
-  const [name, setName] = useState('')
+  const [slug, setSlug] = useState('')
   const [bestGames, setBestGames] = useState([])
   const [newReleases, setNewReleases] = useState([])
 
@@ -21,7 +21,7 @@ function Homepage() {
     await GameApi.get('/games?key=403d2c92ec8046dbb1a78e702f2e6ccb&search=The Witcher 3')
     .then(res => {
       setLink(res.data.results['0'].background_image)
-      setName(res.data.results['0'].name)
+      setSlug(res.data.results['0'].slug)
     }).catch(error => {
       console.log("error")
     }
@@ -115,7 +115,7 @@ async function fetchNewReleases(){
         
           <main>
             <div className="banner-principal">
-              <img src={link} onClick={() => {redirect('/game/' + name)}} alt='main game' />
+              <img src={link} onClick={() => {redirect('/game/' + slug)}} alt='main game' />
             </div>
           
           
@@ -125,15 +125,15 @@ async function fetchNewReleases(){
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
                     <a href={'/game/' + bestGames['0'].slug}><img src={bestGames['0'].image} alt='1st game' /></a>
-                    <h3 className='game-title'>{bestGames['0'] ? bestGames['0'].name : 'Loading'}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + bestGames['0'].slug)}}>{bestGames['0'] ? bestGames['0'].name : 'Loading'}</h3>
                   </li>
                   <li className="banner-pequeno">
                     <a href={'/game/' + bestGames['1'].slug}><img src={bestGames['1'].image} alt='2nd game' /></a>
-                    <h3 className='game-title'>{bestGames['1'] ? bestGames['1'].name : 'Loading'}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + bestGames['1'].slug)}}>{bestGames['1'] ? bestGames['1'].name : 'Loading'}</h3>
                   </li>
                   <li className="banner-pequeno">
                     <a href={'/game/' + bestGames['2'].slug}><img src={bestGames['2'].image} alt='3rd game' /></a>
-                    <h3 className='game-title'>{bestGames['2'] ? bestGames['2'].name : 'Loading'}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + bestGames['2'].slug)}}>{bestGames['2'] ? bestGames['2'].name : 'Loading'}</h3>
                   </li>
                 </ul>
               </div>
@@ -143,15 +143,15 @@ async function fetchNewReleases(){
                 <ul className="sem-marcador inline">
                   <li className="banner-pequeno">
                     <a href={'/game/' + newReleases['0'].slug}><img width='282px' height='168px' src={newReleases['0'].image} alt='1st game' /></a>
-                    <h3 className='game-title'>{newReleases['0'] ? newReleases['0'].name : ''}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + newReleases['0'].slug)}}>{newReleases['0'] ? newReleases['0'].name : ''}</h3>
                   </li>
                   <li className="banner-pequeno">
                     <a href={'/game/' + newReleases['1'].slug}><img src={newReleases['1'].image} alt='2nd game' /></a>
-                    <h3 className='game-title'>{newReleases['1'] ? newReleases['1'].name : ''}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + newReleases['1'].slug)}}>{newReleases['1'] ? newReleases['1'].name : ''}</h3>
                   </li>
                   <li className="banner-pequeno">
                     <a href={'/game/' + newReleases['2'].slug}><img src={newReleases['2'].image} alt='3rd game' /></a>
-                    <h3 className='game-title'>{newReleases['2'] ? newReleases['2'].name : ''}</h3>
+                    <h3 className='game-title' onClick={() => {redirect('/game/' + newReleases['2'].slug)}}>{newReleases['2'] ? newReleases['2'].name : ''}</h3>
                   </li>
                 </ul>
               </div>
