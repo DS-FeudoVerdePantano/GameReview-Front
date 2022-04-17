@@ -3,11 +3,12 @@ import { ProtectedRoute } from './Routes/protected.route';
 //import './Normilaze.css';
 import './Fonts.css';
 import './Components/scrollbar/style.css';
-import Homepage from './Pages/Homepage';
+import Homepage from './Pages/homepage';
 import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/Change Password';
+import GamePage from './Pages/Game Page';
 import { Error } from './Pages/Error';
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/changepassword' element={<ChangePassword/>} />
+          <Route path='/game/:slug' element={<GamePage/>}/>
           <Route  path='*' element={<Error />} />
         </Routes>
       </Router>
