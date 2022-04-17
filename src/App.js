@@ -1,8 +1,9 @@
-import './Fonts.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './Routes/protected.route';
+//import './Normilaze.css';
+import './Fonts.css';
 import './Components/scrollbar/style.css';
-import Homepage from './Pages/Homepage';
+import Homepage from './Pages/homepage';
 import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
@@ -15,6 +16,7 @@ function App() {
 
 
   return (
+
     <div className='main'>
       <Router>
         <Routes>
