@@ -1,0 +1,116 @@
+.tudaokrl{
+    position: relative;
+    background: #1B1B1B;
+    height: 65px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 58px;
+    padding-right: 58px;
+}
+
+.brasao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.brasao img{
+    width: 70px;
+}
+
+.left-box button{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: pointer;
+
+    color: #FFFFFF;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.left-box img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.right-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rb-button{
+    padding-left: 24px;
+}
+
+.rb-perfil{
+    padding-left: 24px;
+}
+
+.rb-perfil img{
+    width: 20px;
+}
+
+.right-box input{
+    background-image: url(../../Images/Lupinha.svg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-color: #1B1B1B;
+    color: #1B1B1B;
+
+    width: 0px;
+    transition: all 0.4s ease-in-out;
+    height: 0px;
+
+    font-size: 16px;
+    padding: 15px 15px;
+    border: none;
+}
+
+.right-box input:focus{
+    width: 200px;
+    color: #FFFFFF;
+    background-image: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.right-box button{
+    width: 90px;
+    height: 34.53px;
+    left: 1282px;
+    top: 12px;
+
+    cursor: pointer;
+
+    background: #410088;
+    border-radius: 29px;
+    border: none;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.right-box button:hover{
+    background: #2B0D5F;
+}
+
+.right-box button:active{
+    background: #410088;
+}
