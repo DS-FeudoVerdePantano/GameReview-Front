@@ -9,7 +9,7 @@ import './style.css';
 
 function Navbar(){
 
-    let redirect = useNavigate()
+    const redirect = useNavigate()
 
     const [username, setUsername] = useState(null)
     const [search, setSearch] = useState(null)
