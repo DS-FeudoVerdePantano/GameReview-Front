@@ -139,7 +139,7 @@ function GamePage(props) {
             { description && screenshots ?
             <Main />
             :
-            <h1>Loading...</h1>
+            <h1 className='loadao'>Loading...</h1>
             }
         </div>
     )

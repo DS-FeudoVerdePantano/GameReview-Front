@@ -55,3 +55,9 @@ h3.game-title{
 img{
     width: 100%;
 }
+
+.loadao{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

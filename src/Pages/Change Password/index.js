@@ -44,7 +44,7 @@ function ChangePassword() {
   return (
     <div className="Tudo">
       <div className="CaixaAL">
-        <h1 className="tituloAL">Alterar Senha</h1>
+        <h1 className="tituloAL">Change Password</h1>
         <form autoComplete="off"
         onSubmit={handleForm}
         >
@@ -62,7 +62,7 @@ function ChangePassword() {
             className='inputino'
             value={password}
             onChange={event => setPassword(event.target.value)}
-            placeholder='Nova Senha'
+            placeholder='New Password'
           />
           <input
             type='password'
@@ -70,10 +70,10 @@ function ChangePassword() {
             className='inputino'
             value={password2}
             onChange={event => setPassword2(event.target.value)}
-            placeholder='Confirmar Senha'
+            placeholder='Confirm Password'
           />
-          {passwordsMatch ? null : <p className='inputError'>As senhas estão diferentes</p>}
-          <button className='AL-button' type='submit'>Salvar Alterações</button>
+          {passwordsMatch ? null : <p className='inputError'>Passwords do not match</p>}
+          <button className='AL-button' type='submit'>Save Changes</button>
         </form>
 
       </div>

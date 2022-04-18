@@ -24,8 +24,8 @@ function ButtonMenu(){
 
                         
 
-                            <DropdownMenu.Item className='menu-option' onClick={() => {redirect('/profile')}}> 
-                                <p>Settings</p>
+                            <DropdownMenu.Item className='menu-option' onClick={() => {redirect('/changepassword')}}> 
+                                <p>Change Password</p>
                             </DropdownMenu.Item>
 
                             <DropdownMenu.Separator className='linha'/>

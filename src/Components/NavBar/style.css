@@ -113,10 +113,13 @@
 }
 
 .right-box button{
-    width: 90px;
+    min-width: 90px;
+    max-width: 200px;
     height: 34.53px;
     left: 1282px;
     top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     cursor: pointer;
 

@@ -21,11 +21,11 @@ function App() {
       <Router>
         <Routes>
           <Route  path='/' element={<Homepage />} />
-          <Route path='/profile' element={<ProtectedRoute />} >
+          {/* <Route path='/profile' element={<ProtectedRoute />} > */}
             {/* Profile page is only accessible if user is logged in */}
             <Route path='/profile' element={<ProfilePage />} />
             {/* Profile page is only accessible if user is logged in */}
-          </Route>
+          {/* </Route> */}
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/changepassword' element={<ChangePassword/>} />

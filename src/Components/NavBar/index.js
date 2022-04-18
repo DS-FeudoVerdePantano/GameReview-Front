@@ -37,7 +37,7 @@ function Navbar(){
             console.log('User is logged in');
             setUsername(localStorage.getItem('name'));
           }).catch(error => {
-            console.log('User not logged in')
+            setUsername(null)
           })
         }
     
@@ -112,12 +112,21 @@ function Navbar(){
                                 {searchList['2']}  
                               </a>
                             </li>
+                            {/* {searchList.map((slug, i) => <li className='searchItem'>
+                            <a key={i} href="" onClick={() => {redirect(`/game/${slug}`)}}>
+                                {searchList[i.toString()]}  
+                              </a>
+                            </li>)} */}
                           </ul>
                         </div>  
                         )}
 
                         <div className="rb-button">
-                            <button type="button" onClick={() => {redirect('/login')}} >{username ? username : 'Login'}</button>
+                            {username ?
+                            <button type="button" onClick={() => {redirect('/profile')}} >{username}</button>
+                              :
+                            <button type="button" onClick={() => {redirect('/login')}} >Login</button>
+                            }
                         </div>
                     </div>
                     

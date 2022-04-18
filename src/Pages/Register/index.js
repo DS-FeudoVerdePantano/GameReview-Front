@@ -32,7 +32,6 @@ function Register() {
         localStorage.setItem('user', response.data.user._id);
         localStorage.setItem('name', response.data.user.name);
         localStorage.setItem('token', response.data.token);
-        localStorage.setItem('name', response.data.user.name);
         console.log(response);
         redirect('/')
         window.location.reload();
@@ -47,7 +46,7 @@ function Register() {
   return (
     <div className="Tudo">
       <div className="CaixaRegistro">
-        <h1 className="tituloRegistro">Registro</h1>
+        <h1 className="tituloRegistro">Register</h1>
         <form autoComplete="off"
         onSubmit={handleForm}
         >
@@ -73,7 +72,7 @@ function Register() {
             className='inputi'
             value={password}
             onChange={event => setPassword(event.target.value)}
-            placeholder='Senha'
+            placeholder='Password'
           />
           <input
             type='password'
@@ -81,16 +80,16 @@ function Register() {
             className='inputi'
             value={password2}
             onChange={event => setPassword2(event.target.value)}
-            placeholder='Confirmar Senha'
+            placeholder='Confirm Password'
           />
-          {passwordsMatch ? null : <p className='inputError'>As senhas estão diferentes</p>}
+          {passwordsMatch ? null : <p className='inputError'>Passwords do not match</p>}
           {
           success ?
             null
             :
-            <p className='inputError'>Usuário já Existe</p>
+            <p className='inputError'>User already exists</p>
           }
-          <button className='register-button' type='submit'>Registro</button>
+          <button className='register-button' type='submit'>Register</button>
         </form>
 
       </div>
