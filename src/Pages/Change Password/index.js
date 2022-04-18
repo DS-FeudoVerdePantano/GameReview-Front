@@ -14,6 +14,13 @@ function ChangePassword() {
 
   const redirect = useNavigate()
 
+  const user = localStorage.getItem('user');
+  const header = {
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  };
+
   async function handleForm(event){
     event.preventDefault();
 
@@ -23,13 +30,7 @@ function ChangePassword() {
 
       setPasswordsMatch(true);
 
-      await api.post('/auth/register', {
-        email: email,
-        password: password,
-      }).then(response => {
-        localStorage.setItem('user', response.data.user._id);
-        localStorage.setItem('token', response.data.token);
-        console.log(response);
+      await api.put(`/auth/${user}`, {password: password}, header).then(response => {
         redirect('/')
         window.location.reload();
       }).catch(error => {
@@ -72,12 +73,6 @@ function ChangePassword() {
             placeholder='Confirmar Senha'
           />
           {passwordsMatch ? null : <p className='inputError'>As senhas estão diferentes</p>}
-          {
-          success ?
-            null
-            :
-            <p className='inputError'>Usuário já Existe</p>
-          }
           <button className='AL-button' type='submit'>Salvar Alterações</button>
         </form>
 

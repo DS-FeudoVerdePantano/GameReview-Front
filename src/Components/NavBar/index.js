@@ -94,7 +94,6 @@ function Navbar(){
                               onBlur={()=> setTimeout(()=>{setSearch('');setList([])}, 2000)}
                             />
                         </div>
-
                         {searchList.length > 0 && (
                           <div className='searchList'>
                           <ul className='listonha'>
