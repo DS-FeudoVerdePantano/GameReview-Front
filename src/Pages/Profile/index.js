@@ -13,6 +13,7 @@ function ProfilePage() {
   const [username, setUsername] = useState(null)
   const [email, setEmail] = useState(null)
   const [userId, setUserId] = useState(null)
+  const [data, setData] = useState({})
 
   const config = {
     headers: {
@@ -20,28 +21,26 @@ function ProfilePage() {
     }
   };
 
-  const data = () => {
+  useEffect(() => {
 
-    if(email !== '' && username !== ''){
-      return {
-        name: username,
-        email: email
+      if(email !== '' && username !== ''){
+        setData({
+          name: username,
+          email: email
+        })
       }
-    }
-    else if(username !== '' ){
-      return {
-        name: username
+      else if(username !== '' ){
+        setData({
+          name: username
+        })
       }
-    }
-    else if(email !== ''){
-      return {
-        email: email
+      else if(email !== ''){
+        setData({
+          email: email
+        })
       }
-    }
-    else {
-      return {}
-    }
-  }
+
+  }, [username, email])
 
   useEffect(() => {
     setUserId(localStorage.getItem('user'))
@@ -51,10 +50,10 @@ function ProfilePage() {
     e.preventDefault()
 
     await api.put(`/auth/${userId}`, data, config).then(res => {
-      console.log(res)
-      // localStorage.setItem('name', res.data.user.name);
-      // redirect('/')
-      // window.location.reload();
+      // console.log(res)
+      localStorage.setItem('name', res.data.user.name);
+      redirect('/')
+      window.location.reload();
     }).catch(err => {
       console.log(err)
     })
