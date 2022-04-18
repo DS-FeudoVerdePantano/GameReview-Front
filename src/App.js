@@ -1,12 +1,14 @@
-import './Fonts.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './Routes/protected.route';
+//import './Normilaze.css';
+import './Fonts.css';
 import './Components/scrollbar/style.css';
 import Homepage from './Pages/Homepage';
 import ProfilePage from './Pages/Profile'
 import Login from './Pages/Login/index';
 import Register from './Pages/Register';
 import ChangePassword from './Pages/Change Password';
+import GamePage from './Pages/Game Page';
 import { Error } from './Pages/Error';
 
 
@@ -14,6 +16,7 @@ function App() {
 
 
   return (
+
     <div className='main'>
       <Router>
         <Routes>
@@ -25,9 +28,8 @@ function App() {
           </Route>
           <Route  path='/login' element={<Login />} />
           <Route path='/register' element={<Register/>} />
-          <Route path='/changepassword' element={<ProtectedRoute />} >
-            <Route path='/changepassword' element={<ChangePassword/>} />
-          </Route>
+          <Route path='/changepassword' element={<ChangePassword/>} />
+          <Route path='/game/:slug' element={<GamePage/>}/>
           <Route  path='*' element={<Error />} />
         </Routes>
       </Router>

@@ -13,10 +13,27 @@ main{
     padding: 10px 58px;
 }
 .banner-principal{
-    width: 880px;
+    width: 1000px;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    cursor: pointer;
 }
+
+.titulindafiel{
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.lancamentos{
+    margin-bottom: 60px;
+}
+
+.game-title{
+    margin-top: 15px;
+}
+
 .inline{
     display: flex;
     flex-direction: row;
@@ -25,10 +42,15 @@ main{
     justify-content: space-around;
 }
 .banner-pequeno{
+    padding-top: 10px;
     width: 300px;
+    cursor: pointer;
 }
 ul.sem-marcador{
     list-style: none;
+}
+h3.game-title{
+    text-align: center;
 }
 img{
     width: 100%;

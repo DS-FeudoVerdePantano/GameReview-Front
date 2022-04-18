@@ -57,14 +57,6 @@
     padding-left: 24px;
 }
 
-.rb-perfil{
-    padding-left: 24px;
-}
-
-.rb-perfil img{
-    width: 20px;
-}
-
 .right-box input{
     background-image: url(../../Images/Lupinha.svg);
     background-position: 0px 0px;
@@ -81,9 +73,41 @@
     border: none;
 }
 
-.right-box input:focus{
-    width: 200px;
+.searchBarr:active .searchList{
     color: #FFFFFF;
+} 
+
+.searchList{
+    background-color: #262626;
+    border: 2px solid #410088;
+    width: 370px;
+    height: 140px;
+    position: absolute;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-top: 180px;
+}
+
+.listonha{
+    cursor: pointer;
+    height: 114px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
+.searchItem{
+    border-bottom: 1px solid #410088;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.right-box input:focus{
+    width: 300px;
+    color: #FFFFFF;
+    background-color: #262626;
+    outline: none;
     background-image: none;
     transition: all 0.4s ease-in-out;
 }

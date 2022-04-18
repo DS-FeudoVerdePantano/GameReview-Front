@@ -30,6 +30,7 @@ function Register() {
         password: password,
       }).then(response => {
         localStorage.setItem('user', response.data.user._id);
+        localStorage.setItem('name', response.data.user.name);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('name', response.data.user.name);
         console.log(response);
