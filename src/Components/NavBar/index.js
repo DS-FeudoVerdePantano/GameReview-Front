@@ -91,7 +91,7 @@ function Navbar(){
                               redirect(`/game/${slug}`)
                               window.location.reload();
                               }}}
-                              onBlur={()=> setTimeout(()=>{setSearch('');setList([])}, 2000)}
+                              onBlur={()=> setTimeout(()=>{setSearch('');setList([])}, 500)}
                             />
                         </div>
                         {searchList.length > 0 && (
